@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Codex Agent Slot</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://sdpi-components.dev; style-src 'unsafe-inline'; img-src data:; connect-src ws://127.0.0.1:*" />
+    <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+</head>
+<body>
+    <sdpi-item label="Slot">
+        <sdpi-select setting="slotNumber" default="1">
+            <option value="1">Agent 1</option>
+            <option value="2">Agent 2</option>
+            <option value="3">Agent 3</option>
+            <option value="4">Agent 4</option>
+            <option value="5">Agent 5</option>
+            <option value="6">Agent 6</option>
+        </sdpi-select>
+    </sdpi-item>
+    <sdpi-item label="Label">
+        <sdpi-textfield setting="label" placeholder="Agent 1"></sdpi-textfield>
+    </sdpi-item>
+    <sdpi-item label="Backend">
+        <sdpi-select setting="backendType" default="wsl">
+            <option value="wsl">WSL2</option>
+            <option value="windows">Native Windows</option>
+        </sdpi-select>
+    </sdpi-item>
+    <sdpi-item label="WSL distro">
+        <sdpi-textfield setting="distribution" default="Ubuntu" placeholder="Ubuntu"></sdpi-textfield>
+    </sdpi-item>
+    <sdpi-item label="Workspace">
+        <sdpi-textfield setting="workspace" placeholder="/home/you/code/project"></sdpi-textfield>
+    </sdpi-item>
+    <sdpi-item label="Workflow">
+        <sdpi-select setting="workflowPreset" default="implement">
+            <option value="implement">Implement</option>
+            <option value="plan">Plan only</option>
+            <option value="debug">Debug</option>
+            <option value="review">Review changes</option>
+            <option value="test">Test / Validate</option>
+            <option value="handoff">Summarize / Handoff</option>
+        </sdpi-select>
+    </sdpi-item>
+    <sdpi-item label="Reasoning">
+        <sdpi-select setting="reasoning" default="medium">
+			<option value="none">None</option>
+            <option value="low">Light</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <option value="xhigh">Extra High</option>
+            <option value="max">Max</option>
+            <option value="ultra">Ultra</option>
+        </sdpi-select>
+    </sdpi-item>
+    <sdpi-item label="Model">
+        <sdpi-textfield setting="model" placeholder="Leave blank for Codex default"></sdpi-textfield>
+    </sdpi-item>
+    <sdpi-item label="Task prompt">
+        <sdpi-textarea setting="prompt" rows="6" placeholder="Describe the agent's objective"></sdpi-textarea>
+    </sdpi-item>
+    <sdpi-item label="Run on tap">
+        <sdpi-checkbox setting="runPromptOnTap" default="false"></sdpi-checkbox>
+    </sdpi-item>
+    <sdpi-item>
+        <sdpi-alert type="info">
+			Tap selects this agent. Hold for about one second to run it. Thread identity is saved automatically. WSL workspaces must use an absolute Linux path such as /home/user/code/project.
+        </sdpi-alert>
+    </sdpi-item>
+</body>
+</html>

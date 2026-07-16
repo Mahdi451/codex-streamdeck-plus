@@ -1,0 +1,172 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+	"Name": "Codex Deck",
+	"Version": "0.2.0.0",
+	"Author": "Mahdi",
+	"Actions": [
+		{
+			"Name": "Agent Slot",
+			"UUID": "com.mahdi.codex-deck.agent-slot",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Select a Codex agent; hold to start its configured workflow.",
+			"PropertyInspectorPath": "ui/agent-slot.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"Name": "Proceed / Approve",
+			"UUID": "com.mahdi.codex-deck.proceed",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Run the selected agent or hold to approve its pending safe request.",
+			"Controllers": [
+				"Keypad"
+			],
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"Name": "Decline / Stop",
+			"UUID": "com.mahdi.codex-deck.decline-stop",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Hold to decline a pending request or interrupt the selected agent.",
+			"Controllers": [
+				"Keypad"
+			],
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"Name": "Agent Selector",
+			"UUID": "com.mahdi.codex-deck.agent-dial",
+			"Icon": "imgs/actions/counter/icon",
+			"Controllers": [
+				"Encoder"
+			],
+			"Encoder": {
+				"Icon": "imgs/actions/counter/icon",
+				"layout": "$B1",
+				"StackColor": "#10A37F",
+				"TriggerDescription": {
+					"Rotate": "Select an agent slot",
+					"Push": "Select without running",
+					"LongTouch": "Run the selected agent"
+				}
+			},
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key"
+				}
+			]
+		},
+		{
+			"Name": "Reasoning / Model",
+			"UUID": "com.mahdi.codex-deck.reasoning-dial",
+			"Icon": "imgs/actions/counter/icon",
+			"Controllers": [
+				"Encoder"
+			],
+			"Encoder": {
+				"Icon": "imgs/actions/counter/icon",
+				"layout": "$B1",
+				"StackColor": "#5B8CFF",
+				"TriggerDescription": {
+					"Rotate": "Choose reasoning; hold and rotate to choose model",
+					"Push": "Reset reasoning to High",
+					"Touch": "Show selected model",
+					"LongTouch": "Refresh live model catalog"
+				}
+			},
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key"
+				}
+			]
+		},
+		{
+			"Name": "Workflow Preset",
+			"UUID": "com.mahdi.codex-deck.workflow-dial",
+			"Icon": "imgs/actions/counter/icon",
+			"Controllers": [
+				"Encoder"
+			],
+			"Encoder": {
+				"Icon": "imgs/actions/counter/icon",
+				"layout": "$B1",
+				"StackColor": "#8B5CF6",
+				"TriggerDescription": {
+					"Rotate": "Choose Implement, Plan, Debug, Review, Validate, or Handoff",
+					"LongTouch": "Run the selected workflow"
+				}
+			},
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key"
+				}
+			]
+		},
+		{
+			"Name": "Backend / Workspace",
+			"UUID": "com.mahdi.codex-deck.backend-dial",
+			"Icon": "imgs/actions/counter/icon",
+			"Controllers": [
+				"Encoder"
+			],
+			"Encoder": {
+				"Icon": "imgs/actions/counter/icon",
+				"layout": "$B1",
+				"StackColor": "#F4A62A",
+				"TriggerDescription": {
+					"Rotate": "Cycle configured backends",
+					"Push": "Reconnect selected backend",
+					"LongTouch": "Reconnect selected backend"
+				}
+			},
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key"
+				}
+			]
+		}
+	],
+	"Category": "Codex Deck",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "A WSL2-first Stream Deck+ mission control for multiple Codex agents.",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "24",
+		"Debug": "enabled"
+	},
+	"UUID": "com.mahdi.codex-deck"
+}
