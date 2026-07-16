@@ -13,6 +13,7 @@
 - Critical-risk requests now require the full Codex interface, and approvals are invalidated on reconnect.
 - Final structured status is recovered from streamed agent messages when turn completion omits item history.
 - Added WSL doctor, expanded unit coverage, physical test guide, and packaged-plugin workflow.
+- Added project mockups, an exact control-surface visual, and automated Markdown/Mermaid validation.
 
 ## 0.1.0 — Starter
 
